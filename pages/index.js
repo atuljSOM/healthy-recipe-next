@@ -54,11 +54,11 @@ export default function HealthyRecipe() {
           {/* Logo */}
           <div className="flex items-center">
             <img src="/logo.png" alt="Logo" className="w-20 h-20" />
-            <div className="ml-3 leading-none text-center">
-              <div className="text-xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
+            <div className="ml-4 leading-snug text-center">
+              <div className="text-2xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
                 DAILY HEALTHY
               </div>
-              <div className="text-xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
+              <div className="text-2xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
                 RECIPE
               </div>
             </div>
@@ -89,10 +89,10 @@ export default function HealthyRecipe() {
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
           <section className="text-center">
-            <h1className="text-5xl font-extrabold text-emerald-700 leading-tight">
-                <span className="block">Nourish Your Body Daily With</span>
-                <span className="block">Healthy Recipes</span>
-                </h1>
+            <h1 className="text-6xl font-extrabold text-emerald-700 leading-tight text-center">
+  <span className="block">Nourish Your Body Daily With</span>
+  <span className="block">Healthy Recipes</span>
+</h1>
             <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
           </section>
 
