@@ -74,14 +74,14 @@ export default function HealthyRecipe() {
           {/* Main Content Box */}
           <div className="flex-1 max-w-6xl bg-green-50 shadow-2xl rounded-2xl p-6 sm:p-8 space-y-8 mx-2">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-green-700">🥗 Healthy recipe of the day</h1>
-            <div className="bg-green-100 border border-green-300 rounded-xl px-6 py-4 mt-4 max-w-2xl mx-auto shadow text-gray-700 text-base sm:text-lg text-center">
-                <p>
-                  Start a daily ritual of healthy eating with one high-protein, low-calorie recipe every day.
-                </p>
-                <p className="mt-2">
-                  Discover fresh inspiration to eat well, feel great — and look forward to what's next.
-                </p>
-              </div>
+            <div className="bg-green-100 border border-green-300 rounded-xl px-8 py-5 mt-4 max-w-4xl mx-auto shadow text-gray-700 text-lg sm:text-xl text-center">
+              <p>
+                Start a daily ritual of healthy eating with one high-protein, low-calorie recipe every day.
+              </p>
+              <p className="mt-2">
+                Discover fresh inspiration to eat well, feel great — and look forward to what's next.
+              </p>
+            </div>
 
  
             {/* Protein Filter */}
