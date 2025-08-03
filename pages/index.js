@@ -53,12 +53,12 @@ export default function HealthyRecipe() {
         <header className="w-full flex justify-between items-center py-4 px-4 bg-white shadow-sm mb-6">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logo.png" alt="Logo" className="w-10 h-10" />
+            <img src="/logo.png" alt="Logo" className="w-14 h-14" />
             <div className="ml-3 leading-none text-center">
-              <div className="text-3xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
+              <div className="text-xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
                 DAILY HEALTHY
               </div>
-              <div className="text-3xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
+              <div className="text-xl font-extrabold text-pink-500 drop-shadow-[2px_2px_0_#581c87] tracking-wide">
                 RECIPE
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function HealthyRecipe() {
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
           <section className="text-center">
-            <h1 className="text-4xl font-extrabold text-emerald-700">🥗 Healthy Recipe of the Day</h1>
+            <h1 className="text-4xl font-extrabold text-emerald-700">Nourish Your Body Daily With Healthy Recipes </h1>
             <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
           </section>
 
