@@ -89,11 +89,11 @@ export default function HealthyRecipe() {
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
           <section className="text-center">
-            <h1 className="text-6xl font-extrabold text-emerald-700 leading-tight text-center">
+            <h1 className="text-5xl font-extrabold text-emerald-700 leading-tight text-center">
   <span className="block">Nourish Your Body Daily With</span>
   <span className="block">Healthy Recipes</span>
 </h1>
-            <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
+            <p className="mt-4 text-xl text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
           </section>
 
           <hr className="border-gray-300" />
