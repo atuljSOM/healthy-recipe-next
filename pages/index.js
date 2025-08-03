@@ -170,7 +170,7 @@ export default function HealthyRecipe() {
                 <a href="/about" className="underline hover:text-green-900">About</a>
                 <a href="/privacy" className="underline hover:text-green-900">Privacy</a>
                 <a href="/terms" className="underline hover:text-green-900">Terms</a>
-                <a href="/contact us" className="underline hover:text-green-900">Terms</a>
+                <a href="/contact" className="underline hover:text-green-900">Contact</a>
               </div>
             </footer>
           </div>
