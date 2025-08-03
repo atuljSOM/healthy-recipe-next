@@ -65,8 +65,19 @@ export default function HealthyRecipe() {
           </div>
 
           {/* Protein Dropdown */}
-          <div>
-            <label htmlFor="protein-choice" className="sr-only">Protein Choice</label>
+          <div className="text-right">
+  {(() => {
+    const taglines = [
+      "Fuel today with your favorite protein",
+      "What's your protein mood today?",
+      "Pick your protein power!",
+      "Choose your protein adventure",
+      "Tap into your inner tofu... or beef."
+    ];
+    const random = taglines[Math.floor(Math.random() * taglines.length)];
+    return <p className="text-sm font-medium text-gray-600 mb-1 italic">{random}</p>;
+  })()}
+  <label htmlFor="protein-choice" className="sr-only">Protein Choice</label>
             <select
               id="protein-choice"
               value={proteinChoice}
@@ -89,7 +100,7 @@ export default function HealthyRecipe() {
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
           <section className="text-center">
-            <h1 className="text-5xl font-extrabold text-emerald-700 leading-tight text-center">
+            <h1 className="text-6xl font-extrabold text-emerald-700 leading-tight text-center">
   <span className="block">Nourish Your Body Daily With</span>
   <span className="block">Healthy Recipes</span>
 </h1>
