@@ -65,7 +65,7 @@ export default function HealthyRecipe() {
           </div>
 
           {/* Protein Dropdown */}
-          <div className="text-right">
+          <div className="flex flex-col sm:items-end items-center sm:mt-0 mt-6">
   {(() => {
     const taglines = [
       "Fuel today with your favorite protein",
@@ -75,27 +75,27 @@ export default function HealthyRecipe() {
       "Tap into your inner tofu... or beef."
     ];
     const random = taglines[Math.floor(Math.random() * taglines.length)];
-    return <p className="text-lg font-medium text-gray-600 mb-1 italic">{random}</p>;
+    return <p className="text-sm font-medium text-gray-600 mb-1 italic text-center sm:text-right">{random}</p>;
   })()}
   <label htmlFor="protein-choice" className="sr-only">Protein Choice</label>
-            <select
-              id="protein-choice"
-              value={proteinChoice}
-              onChange={(e) => setProteinChoice(e.target.value)}
-              className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            >
-              <option value="all">All Proteins</option>
-              <option value="chicken">Chicken</option>
-              <option value="egg">Egg</option>
-              <option value="chickpea">Chickpea</option>
-              <option value="tofu">Tofu</option>
-              <option value="paneer">Paneer</option>
-              <option value="beef">Beef</option>
-              <option value="pork">Pork</option>
-              <option value="fish">Fish</option>
-              <option value="shrimp">Shrimp</option>
-            </select>
-          </div>
+  <select
+    id="protein-choice"
+    value={proteinChoice}
+    onChange={(e) => setProteinChoice(e.target.value)}
+    className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
+  >
+    <option value="all">All Proteins</option>
+    <option value="chicken">Chicken</option>
+    <option value="egg">Egg</option>
+    <option value="chickpea">Chickpea</option>
+    <option value="tofu">Tofu</option>
+    <option value="paneer">Paneer</option>
+    <option value="beef">Beef</option>
+    <option value="pork">Pork</option>
+    <option value="fish">Fish</option>
+    <option value="shrimp">Shrimp</option>
+  </select>
+</div>
         </header>
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
@@ -104,7 +104,7 @@ export default function HealthyRecipe() {
   <span className="block">Nourish Your Body Daily With</span>
   <span className="block">Healthy Recipes</span>
 </h1>
-            <p className="mt-4 text-xl text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
+            <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
           </section>
 
           <hr className="border-gray-300" />
