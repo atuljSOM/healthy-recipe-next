@@ -20,7 +20,7 @@ export default function Contact() {
             <p className="text-gray-700 mb-4">
               You can reach us directly at:
             </p>
-            <p className="font-semibold text-green-800">📧 support@dailyhealthyrecipe.com</p>
+            <p className="font-semibold text-green-800">📧 contact@dailyhealthyrecipe.com</p>
           </div>
 
           <p className="text-sm text-center text-gray-400">
