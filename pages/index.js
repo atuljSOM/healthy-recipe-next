@@ -79,7 +79,7 @@ export default function HealthyRecipe() {
                 Start a daily ritual of healthy eating with one high-protein, low-calorie recipe every day.
               </p>
               <p className="mt-2">
-                Discover fresh inspiration to eat well, feel great — and look forward to what's next.
+               Come back tomorrow for something new to look forward to.
               </p>
             </div>
 
