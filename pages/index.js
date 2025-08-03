@@ -163,10 +163,15 @@ export default function HealthyRecipe() {
               <p className="text-center text-gray-500">Loading recipe...</p>
             )}
 
-            <footer className="text-center text-sm text-gray-400 pt-6">
-              © {new Date().getFullYear()} DailyHealthyRecipe. All rights reserved.
+             <footer className="text-center text-sm text-gray-400 pt-6 border-t mt-10">
+              <p>© {new Date().getFullYear()} DailyHealthyRecipe. All rights reserved.</p>
+              <div className="mt-2 space-x-4 text-green-700">
+                <a href="/about" className="underline hover:text-green-900">About</a>
+                <a href="/privacy" className="underline hover:text-green-900">Privacy</a>
+                <a href="/terms" className="underline hover:text-green-900">Terms</a>
+              </div>
             </footer>
-          </div>
+
 
           {/* Right Ad Space */}
           <aside className="hidden lg:block w-[60px] text-gray-400 text-sm text-center">Ad</aside>
