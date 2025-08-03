@@ -75,7 +75,7 @@ export default function HealthyRecipe() {
       "Tap into your inner tofu... or beef."
     ];
     const random = taglines[Math.floor(Math.random() * taglines.length)];
-    return <p className="text-sm font-medium text-gray-600 mb-1 italic">{random}</p>;
+    return <p className="text-lg font-medium text-gray-600 mb-1 italic">{random}</p>;
   })()}
   <label htmlFor="protein-choice" className="sr-only">Protein Choice</label>
             <select
