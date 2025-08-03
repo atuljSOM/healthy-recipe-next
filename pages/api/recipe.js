@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       fillIngredients: "true",
       addRecipeInformation: "true",
       addRecipeNutrition: "true",
-      minProtein: "10",
+      minProtein: "15",
       maxCalories: "500",
       apiKey,
     });
