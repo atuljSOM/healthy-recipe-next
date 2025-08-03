@@ -22,7 +22,7 @@ export default function HealthyRecipe() {
         />
         <meta
           name="keywords"
-          content="healthy recipes, daily meals, low calorie, high protein, recipe generator, tofu, chicken, vegetarian"
+          content="healthy recipes, daily meals, low calorie, high protein, recipe generator, tofu, chicken, vegetarian, beef, vegan"
         />
         <meta name="author" content="DailyHealthyRecipe Team" />
         <meta property="og:title" content="Healthy Recipe of the Day" />
@@ -74,7 +74,11 @@ export default function HealthyRecipe() {
           {/* Main Content Box */}
           <div className="flex-1 max-w-6xl bg-green-50 shadow-2xl rounded-2xl p-6 sm:p-8 space-y-8 mx-2">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-green-700">🥗 Healthy recipe of the day</h1>
-
+             <p className="text-center text-gray-600 text-base sm:text-lg mt-2 max-w-2xl mx-auto">
+                Start a daily ritual of healthy eating with one high-protein, low-calorie recipe every day.<br />
+                Come back tomorrow for something new to look forward to.
+              </p>
+ 
             {/* Protein Filter */}
             <div className="text-center">
               <h2 className="text-base sm:text-lg font-semibold text-gray-700 mb-2">What protein are you feeling today?</h2>
