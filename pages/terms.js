@@ -54,4 +54,11 @@ export default function TermsOfService() {
 
           <h2 className="text-xl font-semibold">6. Contact</h2>
           <p>
-            F
+            For questions or concerns regarding these terms, please reach out to us at:{" "}
+            <strong>contact@dailyhealthyrecipe.com</strong>
+          </p>
+        </div>
+      </main>
+    </>
+  );
+}
