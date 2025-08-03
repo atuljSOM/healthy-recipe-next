@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
 export default function HealthyRecipe() {
@@ -6,60 +6,37 @@ export default function HealthyRecipe() {
   const [proteinChoice, setProteinChoice] = useState("all");
 
   useEffect(() => {
-    document.title = "Healthy recipe of the day";
-  }, []);
-
-  const fetchRecipe = async (protein) => {
-    try {
-      const response = await fetch(`/api/recipe?protein=${protein}`);
-      const data = await response.json();
-      setRecipe(data);
-    } catch (error) {
-      console.error("Failed to fetch recipe", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchRecipe(proteinChoice);
+    fetch(`/api/recipe?protein=${proteinChoice}`).then(res =>
+      res.json().then(setRecipe)
+    );
   }, [proteinChoice]);
 
   return (
     <>
       <Head>
         <title>Healthy Recipe of the Day | Daily Healthy Meals</title>
-        <meta
-          name="description"
-          content="Discover a new healthy recipe each day based on your favorite protein source. Balanced, nutritious, and delicious!"
-        />
-        <meta
-          name="keywords"
-          content="healthy recipes, daily meals, low calorie, high protein, recipe generator, tofu, chicken, vegetarian"
-        />
+        <meta name="description" content="Discover a new healthy recipe each day based on your favorite protein source. Balanced, nutritious, and delicious!" />
+        <meta name="keywords" content="healthy recipes, daily meals, low calorie, high protein, recipe generator, tofu, chicken, vegetarian" />
         <meta name="author" content="DailyHealthyRecipe Team" />
         <meta property="og:title" content="Healthy Recipe of the Day" />
-        <meta
-          property="og:description"
-          content="Daily high-protein, low-calorie recipes powered by Spoonacular."
-        />
-        <meta
-          property="og:image"
-          content={recipe?.image || "https://yourdomain.com/default-image.jpg"}
-        />
+        <meta property="og:description" content="Daily high-protein, low-calorie recipes powered by Spoonacular." />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={recipe?.image || "/default-image.jpg"} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen bg-lime-50 px-4 py-10 flex justify-center">
+      <main role="main" className="min-h-screen bg-lime-50 px-4 py-10 flex justify-center">
         <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-between">
-          {/* Left Ad Space */}
+          {/* Left Ad */}
           <aside className="hidden lg:block w-[60px] text-gray-400 text-sm text-center">Ad</aside>
 
-          {/* Main Content Box */}
-          <div className="flex-1 max-w-6xl bg-green-50 shadow-2xl rounded-2xl p-6 sm:p-8 space-y-8 mx-2">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-green-700">🥗 Healthy recipe of the day</h1>
+          <article className="flex-1 max-w-6xl bg-green-50 shadow-2xl rounded-2xl p-6 sm:p-8 space-y-8 mx-2" aria-label="Daily Recipe">
+            <header>
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-green-700">🥗 Healthy recipe of the day</h1>
+            </header>
 
-            {/* Protein Filter */}
-            <div className="text-center">
+            {/* Protein Selector */}
+            <section className="text-center" aria-label="Protein Selection">
               <h2 className="text-base sm:text-lg font-semibold text-gray-700 mb-2">What protein are you feeling today?</h2>
               <select
                 value={proteinChoice}
@@ -77,16 +54,16 @@ export default function HealthyRecipe() {
                 <option value="fish">Fish</option>
                 <option value="shrimp">Shrimp</option>
               </select>
-            </div>
+            </section>
 
-            {/* Recipe Display */}
+            {/* Recipe */}
             {recipe ? (
               recipe.title === "Recipe Error" ? (
-                <div className="text-center text-red-500 text-lg font-medium">
+                <section className="text-center text-red-500 text-lg font-medium">
                   No matching recipe found. Try a different protein or try again later.
-                </div>
+                </section>
               ) : (
-                <div className="space-y-8 text-gray-800 text-center">
+                <section className="space-y-8 text-gray-800 text-center" aria-label="Recipe Details">
                   <h2 className="text-xl sm:text-2xl font-bold">{recipe.title}</h2>
 
                   {recipe.image && (
@@ -98,25 +75,24 @@ export default function HealthyRecipe() {
                   )}
 
                   <div className="space-y-6 mx-auto w-full sm:w-4/5 text-center p-6 rounded-xl bg-green-200 shadow">
-                    <div className="p-4 bg-white rounded-lg">
+                    <section className="p-4 bg-white rounded-lg" aria-label="Ingredients">
                       <h3 className="text-lg font-semibold">Ingredients:</h3>
                       <ul className="list-disc list-inside space-y-1 text-left inline-block text-gray-700">
                         {recipe.ingredients.map((item, i) => <li key={i}>{item}</li>)}
                       </ul>
-                    </div>
+                    </section>
 
-                    <div className="p-4 bg-white rounded-lg">
+                    <section className="p-4 bg-white rounded-lg" aria-label="Steps">
                       <h3 className="text-lg font-semibold">Steps:</h3>
                       <div className="text-left inline-block text-gray-700 whitespace-pre-line break-words max-w-full">
                         <ol className="list-decimal list-inside space-y-1">
                           {recipe.steps.map((step, i) => <li key={i}>{step}</li>)}
                         </ol>
                       </div>
-                    </div>
+                    </section>
 
-                    <div className="p-4 bg-white rounded-lg">
+                    <section className="p-4 bg-white rounded-lg" aria-label="Nutrition and Calories">
                       <p><strong>Calories:</strong> {recipe.calories ?? "N/A"} kcal</p>
-
                       <div className="mt-4">
                         <h3 className="font-semibold">Nutritional Info:</h3>
                         {recipe.nutrients?.length > 0 ? (
@@ -127,7 +103,7 @@ export default function HealthyRecipe() {
                           <p className="text-sm italic text-gray-500">Nutrient details are not available for this recipe.</p>
                         )}
                       </div>
-                    </div>
+                    </section>
 
                     {recipe.affiliateLink && (
                       <a
@@ -140,18 +116,18 @@ export default function HealthyRecipe() {
                       </a>
                     )}
                   </div>
-                </div>
+                </section>
               )
             ) : (
               <p className="text-center text-gray-500">Loading recipe...</p>
             )}
 
-            <footer className="text-center text-sm text-gray-400 pt-6">
+            <footer className="text-center text-sm text-gray-400 pt-6" role="contentinfo">
               © {new Date().getFullYear()} DailyHealthyRecipe. All rights reserved.
             </footer>
-          </div>
+          </article>
 
-          {/* Right Ad Space */}
+          {/* Right Ad */}
           <aside className="hidden lg:block w-[60px] text-gray-400 text-sm text-center">Ad</aside>
         </div>
       </main>
