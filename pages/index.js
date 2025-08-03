@@ -48,20 +48,23 @@ export default function HealthyRecipe() {
         )}
       </Head>
 
-      <main className="min-h-screen bg-gray-50 px-4 py-10 flex justify-center">
-        <div className="w-full max-w-6xl flex flex-col space-y-10">
-          <section className="text-center">
-            <h1 className="text-4xl font-extrabold text-emerald-700">🥗 Healthy Recipe of the Day</h1>
-            <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
-          </section>
+      <main className="min-h-screen bg-gray-50 px-4 py-6">
+        {/* Header Section */}
+        <header className="w-full flex justify-between items-center py-4 px-4 bg-white shadow-sm mb-6">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img src="/logo.png" alt="Logo" className="w-10 h-10" />
+            <span className="ml-3 text-xl font-bold text-emerald-700">DailyHealthyRecipe</span>
+          </div>
 
-          <section className="text-center">
-            <label htmlFor="protein-choice" className="block text-gray-600 font-semibold mb-2">Choose your protein:</label>
+          {/* Protein Dropdown */}
+          <div>
+            <label htmlFor="protein-choice" className="sr-only">Protein Choice</label>
             <select
               id="protein-choice"
               value={proteinChoice}
               onChange={(e) => setProteinChoice(e.target.value)}
-              className="border border-gray-300 rounded px-4 py-2 text-center focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               <option value="all">All Proteins</option>
               <option value="chicken">Chicken</option>
@@ -74,6 +77,13 @@ export default function HealthyRecipe() {
               <option value="fish">Fish</option>
               <option value="shrimp">Shrimp</option>
             </select>
+          </div>
+        </header>
+
+        <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
+          <section className="text-center">
+            <h1 className="text-4xl font-extrabold text-emerald-700">🥗 Healthy Recipe of the Day</h1>
+            <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
           </section>
 
           <hr className="border-gray-300" />
