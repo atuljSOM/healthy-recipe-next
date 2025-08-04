@@ -103,7 +103,7 @@ export default function HealthyRecipe() {
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
           <section className="text-center">
             <h1 className="text-6xl font-extrabold text-emerald-700 leading-tight text-center">
-  <span className="block">Today's Healthy Recipe</span>
+  <span className="block">Today's Healthy Recipe,</span>
   <span className="block">Fresh and Unexpected</span>
 </h1>
             <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
