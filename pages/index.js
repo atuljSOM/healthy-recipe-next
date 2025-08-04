@@ -50,7 +50,7 @@ export default function HealthyRecipe() {
 
       <main className="min-h-screen bg-gray-50 px-4 py-6">
         {/* Header Section */}
-        <header className="w-full flex justify-between items-center py-4 px-4 bg-white shadow-sm mb-6">
+        <header className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 px-4 bg-white shadow-sm mb-6 gap-4">
           {/* Logo */}
           <div className="flex items-center">
             <img src="/logo.png" alt="Logo" className="w-20 h-20" />
