@@ -65,37 +65,7 @@ export default function HealthyRecipe() {
           </div>
 
           {/* Protein Dropdown */}
-          <div className="flex flex-col sm:items-end items-center sm:mt-0 mt-6">
-  {(() => {
-    const taglines = [
-      "Fuel today with your favorite protein",
-      "What's your protein mood today?",
-      "Pick your protein power!",
-      "Choose your protein adventure",
-      "Tap into your inner tofu... or beef."
-    ];
-    const random = taglines[Math.floor(Math.random() * taglines.length)];
-    return <p className="text-sm font-medium text-gray-600 mb-1 italic text-center sm:text-right">{random}</p>;
-  })()}
-  <label htmlFor="protein-choice" className="sr-only">Protein Choice</label>
-  <select
-    id="protein-choice"
-    value={proteinChoice}
-    onChange={(e) => setProteinChoice(e.target.value)}
-    className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
-  >
-    <option value="all">All Proteins</option>
-    <option value="chicken">Chicken</option>
-    <option value="egg">Egg</option>
-    <option value="chickpea">Chickpea</option>
-    <option value="tofu">Tofu</option>
-    <option value="paneer">Paneer</option>
-    <option value="beef">Beef</option>
-    <option value="pork">Pork</option>
-    <option value="fish">Fish</option>
-    <option value="shrimp">Shrimp</option>
-  </select>
-</div>
+          
           {/* Desktop Dropdown */}
   <div className="hidden sm:flex flex-col items-end">
     {(() => {
