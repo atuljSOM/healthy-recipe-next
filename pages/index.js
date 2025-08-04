@@ -12,6 +12,14 @@ export default function HealthyRecipe() {
       .catch((err) => console.error("Failed to fetch recipe", err));
   }, [proteinChoice]);
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://eocampaign1.com/form/df92807e-70ef-11f0-8bd4-b7e922d54320.js";
+    script.async = true;
+    script.setAttribute("data-form", "df92807e-70ef-11f0-8bd4-b7e922d54320");
+    document.getElementById("eo_form_container")?.appendChild(script);
+  }, []);
+
   return (
     <>
       <Head>
@@ -65,84 +73,89 @@ export default function HealthyRecipe() {
           </div>
 
           {/* Protein Dropdown */}
-          
           {/* Desktop Dropdown */}
-  <div className="hidden sm:flex flex-col items-end">
-    {(() => {
-      const taglines = [
-        "Fuel today with your favorite protein",
-        "What's your protein mood today?",
-        "Pick your protein power!",
-        "Choose your protein adventure",
-        "Tap into your inner tofu... or beef."
-      ];
-      const random = taglines[Math.floor(Math.random() * taglines.length)];
-      return <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{random}</p>;
-    })()}
-    <label htmlFor="protein-choice-desktop" className="sr-only">Protein Choice</label>
-    <select
-      id="protein-choice-desktop"
-      value={proteinChoice}
-      onChange={(e) => setProteinChoice(e.target.value)}
-      className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
-    >
-      <option value="all">All Proteins</option>
-      <option value="chicken">Chicken</option>
-      <option value="egg">Egg</option>
-      <option value="chickpea">Chickpea</option>
-      <option value="tofu">Tofu</option>
-      <option value="paneer">Paneer</option>
-      <option value="beef">Beef</option>
-      <option value="pork">Pork</option>
-      <option value="fish">Fish</option>
-      <option value="shrimp">Shrimp</option>
-    </select>
-  </div>
-</header>
+          <div className="hidden sm:flex flex-col items-end">
+            {(() => {
+              const taglines = [
+                "Fuel today with your favorite protein",
+                "What's your protein mood today?",
+                "Pick your protein power!",
+                "Choose your protein adventure",
+                "Tap into your inner tofu... or beef."
+              ];
+              const random = taglines[Math.floor(Math.random() * taglines.length)];
+              return <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{random}</p>;
+            })()}
+            <label htmlFor="protein-choice-desktop" className="sr-only">Protein Choice</label>
+            <select
+              id="protein-choice-desktop"
+              value={proteinChoice}
+              onChange={(e) => setProteinChoice(e.target.value)}
+              className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
+            >
+              <option value="all">All Proteins</option>
+              <option value="chicken">Chicken</option>
+              <option value="egg">Egg</option>
+              <option value="chickpea">Chickpea</option>
+              <option value="tofu">Tofu</option>
+              <option value="paneer">Paneer</option>
+              <option value="beef">Beef</option>
+              <option value="pork">Pork</option>
+              <option value="fish">Fish</option>
+              <option value="shrimp">Shrimp</option>
+            </select>
+          </div>
+        </header>
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
           <section className="text-center">
             <h1 className="text-6xl font-extrabold text-emerald-700 leading-tight text-center">
-  <span className="block">Today's Healthy Recipe,</span>
-  <span className="block">Fresh and Unexpected</span>
-</h1>
+              <span className="block">Today's Healthy Recipe,</span>
+              <span className="block">Fresh and Unexpected</span>
+            </h1>
             <p className="mt-4 text-lg text-gray-700">Start your daily ritual of healthy eating. One nutritious recipe every day.</p>
           </section>
 
           <section className="flex sm:hidden flex-col items-center gap-2 mt-6">
-  {(() => {
-    const taglines = [
-      "Fuel today with your favorite protein",
-      "What's your protein mood today?",
-      "Pick your protein power!",
-      "Choose your protein adventure",
-      "Tap into your inner tofu... or beef."
-    ];
-    const random = taglines[Math.floor(Math.random() * taglines.length)];
-    return <p className="text-sm font-medium text-gray-600 italic text-center">{random}</p>;
-  })()}
-  <label htmlFor="protein-choice-mobile" className="sr-only">Protein Choice</label>
-  <select
-    id="protein-choice-mobile"
-    value={proteinChoice}
-    onChange={(e) => setProteinChoice(e.target.value)}
-    className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
-  >
-    <option value="all">All Proteins</option>
-    <option value="chicken">Chicken</option>
-    <option value="egg">Egg</option>
-    <option value="chickpea">Chickpea</option>
-    <option value="tofu">Tofu</option>
-    <option value="paneer">Paneer</option>
-    <option value="beef">Beef</option>
-    <option value="pork">Pork</option>
-    <option value="fish">Fish</option>
-    <option value="shrimp">Shrimp</option>
-  </select>
-</section>
+            {(() => {
+              const taglines = [
+                "Fuel today with your favorite protein",
+                "What's your protein mood today?",
+                "Pick your protein power!",
+                "Choose your protein adventure",
+                "Tap into your inner tofu... or beef."
+              ];
+              const random = taglines[Math.floor(Math.random() * taglines.length)];
+              return <p className="text-sm font-medium text-gray-600 italic text-center">{random}</p>;
+            })()}
+            <label htmlFor="protein-choice-mobile" className="sr-only">Protein Choice</label>
+            <select
+              id="protein-choice-mobile"
+              value={proteinChoice}
+              onChange={(e) => setProteinChoice(e.target.value)}
+              className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
+            >
+              <option value="all">All Proteins</option>
+              <option value="chicken">Chicken</option>
+              <option value="egg">Egg</option>
+              <option value="chickpea">Chickpea</option>
+              <option value="tofu">Tofu</option>
+              <option value="paneer">Paneer</option>
+              <option value="beef">Beef</option>
+              <option value="pork">Pork</option>
+              <option value="fish">Fish</option>
+              <option value="shrimp">Shrimp</option>
+            </select>
+          </section>
 
-<hr className="border-gray-300" />
+          <hr className="border-gray-300" />
 
+          {/* EmailOctopus Embed Script */}
+          <section className="flex justify-center">
+            <div id="eo_form_container"></div>
+          </section>
+
+          {/* Recipe Content */}
           {recipe ? (
             recipe.title === "Recipe Error" ? (
               <div className="text-center text-red-500 text-lg font-medium">
