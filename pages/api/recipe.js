@@ -8,7 +8,7 @@ const redis = new Redis({
 export default async function handler(req, res) {
   const { protein = "all" } = req.query;
   const apiKey = process.env.SPOONACULAR_API_KEY;
-  const today = new Date().toISOString().split("T")[0];
+  const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" });
   const cacheKey = "recipe:" + protein + ":" + today;
 
   if (!apiKey) {
