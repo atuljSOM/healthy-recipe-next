@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
   try {
     const searchParams = new URLSearchParams({
-      number: 1,
+      number: 5,
       sort: "random",
       instructionsRequired: "true",
       fillIngredients: "true",
@@ -42,28 +42,56 @@ export default async function handler(req, res) {
     const searchUrl = "https://api.spoonacular.com/recipes/complexSearch?" + searchParams.toString();
     const searchRes = await fetch(searchUrl);
     const searchData = await searchRes.json();
-    const recipe = searchData?.results?.[0];
+    const candidates = searchData?.results || [];
 
-    if (!recipe || !recipe.id) throw new Error("No recipe found.");
+    let recipe = null;
 
-    const infoUrl = `https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=true&apiKey=${apiKey}`;
-    const infoRes = await fetch(infoUrl);
-    const fullData = await infoRes.json();
+    for (const candidate of candidates) {
+      const infoUrl = `https://api.spoonacular.com/recipes/${candidate.id}/information?includeNutrition=true&apiKey=${apiKey}`;
+      const infoRes = await fetch(infoUrl);
+      const fullData = await infoRes.json();
 
-    const nutrients = fullData?.nutrition?.nutrients?.map(n =>
+      const ingredients = fullData.extendedIngredients?.map(i => i.original.toLowerCase()) || [];
+
+      const containsRealProtein = (proteinType) => {
+        const meatRegex = {
+          chicken: /chicken (breast|thigh|meat|cutlet|drumstick|tender|ground)/,
+          beef: /beef|steak|ground beef/,
+          tofu: /tofu/,
+          chickpea: /chickpea/,
+          egg: /egg(?!nog)/,
+          paneer: /paneer/,
+          pork: /pork|bacon/,
+          fish: /salmon|cod|tilapia|fish/,
+          shrimp: /shrimp|prawn/
+        };
+
+        if (!proteinType || !meatRegex[proteinType]) return true; // skip filter if 'all'
+        return ingredients.some(ing => meatRegex[proteinType].test(ing));
+      };
+
+      if (protein === "all" || containsRealProtein(protein)) {
+        recipe = fullData;
+        break;
+      }
+    }
+
+    if (!recipe) throw new Error("No valid recipe found");
+
+    const nutrients = recipe?.nutrition?.nutrients?.map(n =>
       n.name + ": " + n.amount + " " + n.unit
     ) || [];
 
     const responseData = {
-      title: fullData.title,
-      image: fullData.image,
-      ingredients: fullData.extendedIngredients?.map(i => i.original) || [],
-      steps: fullData.analyzedInstructions?.[0]?.steps?.map(s => s.step) || [],
+      title: recipe.title,
+      image: recipe.image,
+      ingredients: recipe.extendedIngredients?.map(i => i.original) || [],
+      steps: recipe.analyzedInstructions?.[0]?.steps?.map(s => s.step) || [],
       calories: Math.round(
-        fullData.nutrition?.nutrients?.find(n => n.name === "Calories")?.amount || 0
+        recipe.nutrition?.nutrients?.find(n => n.name === "Calories")?.amount || 0
       ),
       nutrients,
-      affiliateLink: fullData.sourceUrl || null,
+      affiliateLink: recipe.sourceUrl || null,
     };
 
     await redis.set(cacheKey, responseData, { ex: 86400 });
