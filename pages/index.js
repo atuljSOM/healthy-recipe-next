@@ -152,13 +152,9 @@ export default function HealthyRecipe() {
 
           {/* EmailOctopus Embed Script */}
            <section className="flex justify-center mt-10">
-              <div className="text-center w-full">
-                <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-                  Get a fresh, healthy recipe in your inbox every day 🍽️
-                </h2>
-                <div id="eo_form_container" className="flex justify-center"></div>
-              </div>
+              <div id="eo_form_container" className="flex justify-center w-full"></div>
             </section>
+
 
           {/* Recipe Content */}
           {recipe ? (
