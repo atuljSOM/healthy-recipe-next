@@ -22,17 +22,21 @@ export default function HealthyRecipe() {
 
   return (
     <>
-      <Head>
+       <Head>
         <title>Healthy Recipe of the Day | Daily Healthy Meals</title>
         <meta name="description" content="Discover a new healthy recipe each day based on your favorite protein source." />
         <meta name="keywords" content="healthy recipes, daily meals, easy cooking, high protein, recipe generator" />
         <meta name="author" content="DailyHealthyRecipe Team" />
-        <meta property="og:title" content="Healthy Recipe of the Day" />
-        <meta property="og:description" content="Daily high-protein, low-calorie recipes powered by Spoonacular." />
+      
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Today's Healthy Recipe" />
+        <meta property="og:description" content="Fresh and unexpected recipes every day!" />
+        <meta property="og:image" content="https://dailyhealthyrecipe.com/og-image.jpg" />
+        <meta property="og:url" content="https://dailyhealthyrecipe.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={recipe?.image || "/default-image.jpg"} />
+      
         <link rel="icon" href="/favicon.ico" />
-
+      
         {recipe && (
           <script
             type="application/ld+json"
@@ -55,6 +59,7 @@ export default function HealthyRecipe() {
           />
         )}
       </Head>
+
 
       <main className="min-h-screen bg-gray-50 px-4 py-6">
         {/* Header Section */}
