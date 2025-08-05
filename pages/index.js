@@ -39,7 +39,7 @@ export default function HealthyRecipe() {
         <meta property="og:image:height" content="630" />
 
       
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://dailyhealthyrecipe.com/favicon.ico" />
       
         {recipe && (
           <script
