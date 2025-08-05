@@ -31,9 +31,13 @@ export default function HealthyRecipe() {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Today's Healthy Recipe" />
         <meta property="og:description" content="Fresh and unexpected recipes every day!" />
-        <meta property="og:image" content="https://dailyhealthyrecipe.com/og-image.jpg" />
-        <meta property="og:url" content="https://dailyhealthyrecipe.com" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dailyhealthyrecipe.com" />
+        <meta property="og:image" content="https://dailyhealthyrecipe.com/og-image.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
       
         <link rel="icon" href="/favicon.ico" />
       
