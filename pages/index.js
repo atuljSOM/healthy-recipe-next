@@ -25,7 +25,7 @@ export default function HealthyRecipe() {
       <Head>
         <title>Healthy Recipe of the Day | Daily Healthy Meals</title>
         <meta name="description" content="Discover a new healthy recipe each day based on your favorite protein source." />
-        <meta name="keywords" content="healthy recipes, daily meals, high protein, recipe generator" />
+        <meta name="keywords" content="healthy recipes, daily meals, easy cooking, high protein, recipe generator" />
         <meta name="author" content="DailyHealthyRecipe Team" />
         <meta property="og:title" content="Healthy Recipe of the Day" />
         <meta property="og:description" content="Daily high-protein, low-calorie recipes powered by Spoonacular." />
