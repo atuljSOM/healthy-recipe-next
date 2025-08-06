@@ -20,6 +20,30 @@ export default function HealthyRecipe() {
     document.getElementById("eo_form_container")?.appendChild(script);
   }, []);
 
+   const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = new Date();
+      const pstNow = new Date(now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
+      const tomorrow = new Date(pstNow);
+      tomorrow.setDate(pstNow.getDate() + 1);
+      tomorrow.setHours(0, 0, 0, 0);
+  
+      const diff = tomorrow - pstNow;
+      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, "0");
+      const minutes = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, "0");
+      const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
+  
+      setTimeLeft(`${hours}:${minutes}:${seconds}`);
+    };
+  
+    updateCountdown(); // Initial call
+    const intervalId = setInterval(updateCountdown, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+
   return (
     <>
        <Head>
@@ -99,37 +123,47 @@ export default function HealthyRecipe() {
 
           {/* Protein Dropdown */}
           {/* Desktop Dropdown */}
-          <div className="hidden sm:flex flex-col items-end">
-            {(() => {
-              const taglines = [
-                "Fuel today with your favorite protein",
-                "What's your protein mood today?",
-                "Pick your protein power!",
-                "Choose your protein adventure",
-                "Tap into your inner tofu... or beef."
-              ];
-              const random = taglines[Math.floor(Math.random() * taglines.length)];
-              return <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{random}</p>;
-            })()}
-            <label htmlFor="protein-choice-desktop" className="sr-only">Protein Choice</label>
-            <select
-              id="protein-choice-desktop"
-              value={proteinChoice}
-              onChange={(e) => setProteinChoice(e.target.value)}
-              className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
-            >
-              <option value="all">All Proteins</option>
-              <option value="chicken">Chicken</option>
-              <option value="egg">Egg</option>
-              <option value="chickpea">Chickpea</option>
-              <option value="tofu">Tofu</option>
-              <option value="paneer">Paneer</option>
-              <option value="beef">Beef</option>
-              <option value="pork">Pork</option>
-              <option value="fish">Fish</option>
-              <option value="shrimp">Shrimp</option>
-            </select>
-          </div>
+          <div className="hidden sm:flex items-center justify-end gap-6 w-full">
+        {/* Countdown Timer */}
+        <div className="text-right text-sm font-semibold text-emerald-700">
+          <div className="uppercase tracking-wider text-xs text-gray-500">Next recipe in:</div>
+          <div className="text-lg font-bold">{timeLeft}</div>
+        </div>
+
+        {/* Protein Selector and Tagline */}
+        <div className="flex flex-col items-end">
+          {(() => {
+            const taglines = [
+              "Fuel today with your favorite protein",
+              "What's your protein mood today?",
+              "Pick your protein power!",
+              "Choose your protein adventure",
+              "Tap into your inner tofu... or beef."
+            ];
+            const random = taglines[Math.floor(Math.random() * taglines.length)];
+            return <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{random}</p>;
+          })()}
+          <label htmlFor="protein-choice-desktop" className="sr-only">Protein Choice</label>
+          <select
+            id="protein-choice-desktop"
+            value={proteinChoice}
+            onChange={(e) => setProteinChoice(e.target.value)}
+            className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-[200px]"
+          >
+            <option value="all">All Proteins</option>
+            <option value="chicken">Chicken</option>
+            <option value="egg">Egg</option>
+            <option value="chickpea">Chickpea</option>
+            <option value="tofu">Tofu</option>
+            <option value="paneer">Paneer</option>
+            <option value="beef">Beef</option>
+            <option value="pork">Pork</option>
+            <option value="fish">Fish</option>
+            <option value="shrimp">Shrimp</option>
+          </select>
+        </div>
+      </div>
+
         </header>
 
         <div className="w-full max-w-6xl mx-auto flex flex-col space-y-10">
@@ -179,6 +213,12 @@ export default function HealthyRecipe() {
            <section className="flex justify-center mt-10">
               <div id="eo_form_container" className="flex justify-center w-full"></div>
             </section>
+
+          {/* Mobile Countdown Timer */}
+          <section className="sm:hidden text-center text-sm font-semibold text-emerald-700 mt-4">
+            <div className="uppercase tracking-wider text-xs text-gray-500">Next recipe in:</div>
+            <div className="text-lg font-bold">{timeLeft}</div>
+          </section>
 
 
           {/* Recipe Content */}
