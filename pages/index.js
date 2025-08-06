@@ -121,28 +121,18 @@ export default function HealthyRecipe() {
             </div>
           </div>
 
-          {/* Protein Dropdown */}
-                    {/* Desktop Dropdown + Countdown */}
-          <div className="hidden sm:flex items-center gap-6">
-            {/* Countdown on the left */}
-            <div className="text-sm font-semibold text-emerald-700 text-right">
+                    {/* Header Controls: Countdown Timer and Protein Selector */}
+          <div className="hidden sm:flex items-center justify-end gap-6 w-full">
+            
+            {/* Countdown Timer (Standalone, Left Side) */}
+            <div className="text-right text-sm font-semibold text-emerald-700">
               <div className="uppercase tracking-wider text-xs text-gray-500">Next recipe in:</div>
-              <div className="text-base font-bold">{timeLeft}</div>
+              <div className="text-lg font-bold">{timeLeft}</div>
             </div>
           
-            {/* Dropdown with tagline on the right */}
+            {/* Protein Dropdown with Tagline (Right Side) */}
             <div className="flex flex-col items-end">
-              {(() => {
-                const taglines = [
-                  "Fuel today with your favorite protein",
-                  "What's your protein mood today?",
-                  "Pick your protein power!",
-                  "Choose your protein adventure",
-                  "Tap into your inner tofu... or beef."
-                ];
-                const random = taglines[Math.floor(Math.random() * taglines.length)];
-                return <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{random}</p>;
-              })()}
+              <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{tagline}</p>
               <label htmlFor="protein-choice-desktop" className="sr-only">Protein Choice</label>
               <select
                 id="protein-choice-desktop"
@@ -163,6 +153,7 @@ export default function HealthyRecipe() {
               </select>
             </div>
           </div>
+
 
 
         </header>
