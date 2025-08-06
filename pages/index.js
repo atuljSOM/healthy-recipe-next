@@ -43,6 +43,18 @@ export default function HealthyRecipe() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const tagline = React.useMemo(() => {
+  const taglines = [
+    "Fuel today with your favorite protein",
+    "What's your protein mood today?",
+    "Pick your protein power!",
+    "Choose your protein adventure",
+    "Tap into your inner tofu... or beef."
+  ];
+  return taglines[Math.floor(Math.random() * taglines.length)];
+}, []);
+
+
 
   return (
     <>
@@ -168,17 +180,7 @@ export default function HealthyRecipe() {
           </section>
 
           <section className="flex sm:hidden flex-col items-center gap-2 mt-6">
-            {(() => {
-              const taglines = [
-                "Fuel today with your favorite protein",
-                "What's your protein mood today?",
-                "Pick your protein power!",
-                "Choose your protein adventure",
-                "Tap into your inner tofu... or beef."
-              ];
-              const random = taglines[Math.floor(Math.random() * taglines.length)];
-              return <p className="text-sm font-medium text-gray-600 italic text-center">{random}</p>;
-            })()}
+            <p className="text-sm font-medium text-gray-600 mb-1 italic text-right">{tagline}</p>
             <label htmlFor="protein-choice-mobile" className="sr-only">Protein Choice</label>
             <select
               id="protein-choice-mobile"
