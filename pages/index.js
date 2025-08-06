@@ -164,7 +164,6 @@ export default function HealthyRecipe() {
             </div>
           </div>
 
-      </div>
 
         </header>
 
