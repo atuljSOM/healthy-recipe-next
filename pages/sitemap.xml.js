@@ -1,13 +1,30 @@
 export async function getServerSideProps({ res }) {
-  res.setHeader('Content-Type', 'application/xml');
-  res.write(`<?xml version="1.0" encoding="UTF-8"?>
+  const baseUrl = 'https://dailyhealthyrecipe.com';
+
+  const staticPages = [
+    '',
+    'about',
+    'contact',
+    'privacy',
+    'terms'
+  ];
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-      <loc>https://dailyhealthyrecipe.com/</loc>
-      <changefreq>daily</changefreq>
-      <priority>1.0</priority>
-    </url>
-  </urlset>`);
+    ${staticPages
+      .map(
+        (page) => `
+      <url>
+        <loc>${baseUrl}/${page}</loc>
+        <changefreq>monthly</changefreq>
+        <priority>${page === '' ? '1.0' : '0.5'}</priority>
+      </url>`
+      )
+      .join('')}
+  </urlset>`;
+
+  res.setHeader('Content-Type', 'application/xml');
+  res.write(sitemap);
   res.end();
 
   return { props: {} };
