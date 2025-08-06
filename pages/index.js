@@ -54,6 +54,18 @@ export default function HealthyRecipe() {
   return taglines[Math.floor(Math.random() * taglines.length)];
 }, []);
 
+  const handleSubscribe = async () => {
+  const res = await fetch("/api/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: "user@example.com" })
+  });
+
+  const result = await res.json();
+  console.log(result);
+};
+
+
 
 
   return (
