@@ -183,7 +183,7 @@ export default function HomePage() {
           {recipe && recipe.title !== "Recipe Error" ? (
 
            <section className="w-full bg-[#f9f9f9] py-10 px-4 md:px-12">
-  <h2 className="text-2xl font-bold text-center mb-10">Today’s Recipe</h2>
+  <h2 className="text-2xl font-bold text-center mb-10">Today's Healthy Recipe,Fresh and Unexpected</h2>
 
   <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
     {/* Floating Card */}
