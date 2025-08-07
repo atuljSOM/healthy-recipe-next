@@ -170,12 +170,6 @@ export default function HomePage() {
               <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
                 Contact
               </Link>
-              <Link href="/terms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
-                Terms
-              </Link>
-              <Link href="/privacy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
-                Privacy
-              </Link>
             </div>
           )}
         </div>
