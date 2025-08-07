@@ -84,8 +84,22 @@ export default function HomePage() {
         <meta name="description" content="Discover a new healthy recipe each day. Choose your protein and start cooking." />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-br from-emerald-50 to-rose-50 text-gray-900 font-sans py-10">
+      <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
+
+         <header className="flex items-center justify-between py-4 border-b border-gray-200">
+        <div className="flex items-center gap-4">
+          <img
+            src="/logo.png"
+            alt="Daily Healthy Recipe logo"
+            className="w-12 h-12 object-contain"
+          />
+          <h1 className="text-2xl font-bold text-purple-700 tracking-tight">
+            Daily Healthy Recipe
+          </h1>
+        </div>
+      </header>
+
           {/* Hero Header */}
           <section className="text-center space-y-3">
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
