@@ -2,8 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
+import { Menu } from "lucide-react";
 
 export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [recipe, setRecipe] = useState(null);
   const [proteinChoice, setProteinChoice] = useState("all");
   const [timeLeft, setTimeLeft] = useState("");
@@ -133,20 +136,51 @@ export default function HomePage() {
 
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
 
-         <header className="flex items-center justify-between py-4 border-b border-gray-200">
-          <div className="flex items-center">
-            <img
-              src="/logo.png"
-              alt="Daily Healthy Recipe logo"
-              className="w-14 h-14 object-contain"
-            />
-            <div className="leading-snug text-left">
-              <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
-                Dailyhealthyrecipe.com
-              </div>
+               <header className="w-screen px-4 flex items-center justify-between py-4 border-b border-gray-200 relative z-20 bg-white bg-opacity-70 backdrop-blur">
+        {/* Left: Logo and Title */}
+        <div className="flex items-center gap-2">
+          <img
+            src="/logo.png"
+            alt="Daily Healthy Recipe logo"
+            className="w-14 h-14 object-contain"
+          />
+          <div className="leading-snug text-left">
+            <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
+              Dailyhealthyrecipe.com
             </div>
           </div>
-        </header>
+        </div>
+      
+        {/* Right: Menu Icon */}
+        <div className="relative">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 rounded hover:bg-purple-100 transition"
+            aria-label="Menu"
+          >
+            <Menu className="w-6 h-6 text-purple-700" />
+          </button>
+      
+          {/* Dropdown Menu */}
+          {menuOpen && (
+            <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md py-2 border border-gray-100">
+              <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
+                About
+              </Link>
+              <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
+                Contact
+              </Link>
+              <Link href="/terms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
+                Terms
+              </Link>
+              <Link href="/privacy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
+                Privacy
+              </Link>
+            </div>
+          )}
+        </div>
+      </header>
+
                 
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
 
