@@ -143,10 +143,7 @@ export default function HomePage() {
             />
             <div className="leading-snug text-left">
               <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
-                Daily Healthy
-              </div>
-              <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
-                Recipe
+                Dailyhealthyrecipe.com
               </div>
             </div>
           </div>
