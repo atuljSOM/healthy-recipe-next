@@ -84,7 +84,7 @@ export default function HomePage() {
         <meta name="description" content="Discover a new healthy recipe each day. Choose your protein and start cooking." />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-br from-emerald-50 to-rose-50 text-gray-900 font-sans px-6 py-10">
+      <main className="min-h-screen bg-gradient-to-br from-emerald-50 to-rose-50 text-gray-900 font-sans py-10">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Hero Header */}
           <section className="text-center space-y-3">
