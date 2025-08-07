@@ -135,7 +135,7 @@ export default function HomePage() {
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
 
          <header className="flex items-center justify-between py-4 border-b border-gray-200">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <img
               src="/logo.png"
               alt="Daily Healthy Recipe logo"
