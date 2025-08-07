@@ -8,6 +8,8 @@ export default function PrivacyPolicy() {
       <Head>
         <title>Privacy Policy | Daily Healthy Recipe</title>
         <meta name="description" content="Our privacy policy explains how we collect and protect your data when using Daily Healthy Recipe." />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
       </Head>
 
       <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
