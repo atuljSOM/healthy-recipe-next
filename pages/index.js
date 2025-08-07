@@ -135,17 +135,23 @@ export default function HomePage() {
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
 
          <header className="flex items-center justify-between py-4 border-b border-gray-200">
-        <div className="flex items-center gap-4">
-          <img
-            src="/logo.png"
-            alt="Daily Healthy Recipe logo"
-            className="w-12 h-12 object-contain"
-          />
-          <h1 className="text-2xl font-bold text-purple-700 tracking-tight">
-            Daily Healthy Recipe
-          </h1>
-        </div>
-      </header>
+          <div className="flex items-center gap-4">
+            <img
+              src="/logo.png"
+              alt="Daily Healthy Recipe logo"
+              className="w-14 h-14 object-contain"
+            />
+            <div className="leading-snug text-left">
+              <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
+                Daily Healthy
+              </div>
+              <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
+                Recipe
+              </div>
+            </div>
+          </div>
+        </header>
+
 
           {/* Hero Header */}
           <section className="text-center space-y-3">
