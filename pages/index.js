@@ -82,7 +82,25 @@ export default function HomePage() {
       <Head>
         <title>Daily Healthy Recipe | Fresh Recipe Every Day</title>
         <meta name="description" content="Discover a new healthy recipe each day. Choose your protein and start cooking." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+        {/* Favicon & Browser Icons */}
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+      
+        {/* Open Graph (optional, for social sharing) */}
+        <meta property="og:title" content="Daily Healthy Recipe" />
+        <meta property="og:description" content="Get a new, healthy recipe every day – powered by your favorite protein." />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:url" content="https://www.dailyhealthyrecipe.com" />
       </Head>
+
 
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
