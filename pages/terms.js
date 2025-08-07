@@ -61,3 +61,24 @@ export default function TermsPage() {
           </section>
 
           <section>
+            <h2 className="text-xl font-semibold mb-2">5. Disclaimer</h2>
+            <p>
+              Recipes and nutritional information are provided for general information only. Always consult a healthcare provider or nutritionist for dietary advice.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">6. Contact</h2>
+            <p>
+              Questions? Contact us at <a href="mailto:hello@dailyhealthyrecipe.com" className="text-blue-600 underline">hello@dailyhealthyrecipe.com</a>
+            </p>
+          </section>
+
+          <p className="text-sm text-gray-500">
+            Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          </p>
+        </div>
+      </main>
+    </>
+  );
+}
