@@ -101,6 +101,35 @@ export default function HomePage() {
         <meta property="og:url" content="https://www.dailyhealthyrecipe.com" />
       </Head>
 
+           {recipe && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Recipe",
+                name: recipe.title,
+                image: recipe.image,
+                author: { "@type": "Organization", name: "DailyHealthyRecipe" },
+                description: `A healthy and delicious recipe featuring ${proteinChoice}`,
+                prepTime: "PT10M",
+                cookTime: "PT20M",
+                totalTime: "PT30M",
+                recipeIngredient: recipe.ingredients,
+                recipeInstructions: recipe.steps.map((step) => ({
+                  "@type": "HowToStep",
+                  text: step
+                })),
+                nutrition: {
+                  "@type": "NutritionInformation",
+                  calories: recipe.calories + " calories"
+                }
+              })
+            }}
+          />
+        )}
+
+
 
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
