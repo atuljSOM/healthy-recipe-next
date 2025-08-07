@@ -264,6 +264,7 @@ export default function HomePage() {
               <a href="/terms" className="hover:underline">Terms</a>
               <a href="/privacy" className="hover:underline">Privacy</a>
               <a href="/contact" className="hover:underline">Contact</a>
+             <a href="/about" className="hover:underline">About</a>
             </div>
           </footer>
         </div>
