@@ -85,7 +85,7 @@ export default function HomePage() {
       </Head>
 
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 to-rose-50 text-gray-900 font-sans py-10">
-        <div className="w-full px-4 md:px-12 space-y-12">
+        <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
           {/* Hero Header */}
           <section className="text-center space-y-3">
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
