@@ -1,6 +1,7 @@
 // pages/contact.js
 
 import Head from "next/head";
+import { Instagram } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -23,7 +24,7 @@ export default function ContactPage() {
             <h2 className="text-xl font-semibold">Email</h2>
             <p>
               Send us a message at:{" "}
-              <a href="mailto:hello@dailyhealthyrecipe.com" className="text-blue-600 underline">
+              <a href="mailto:contact@dailyhealthyrecipe.com" className="text-blue-600 underline">
                 hello@dailyhealthyrecipe.com
               </a>
             </p>
@@ -34,7 +35,16 @@ export default function ContactPage() {
             <p>Follow us for healthy inspiration and updates:</p>
             <ul className="list-disc list-inside space-y-1 text-sm">
               <li>
-                Instagram: <a href="https://instagram.com/dailyhealthyrecipe" className="text-blue-600 underline">@dailyhealthyrecipe_</a>
+                <a
+                href="https://instagram.com/dailyhealthyrecipe_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-600 hover:underline"
+              >
+                <Instagram className="w-5 h-5" />
+                @dailyhealthyrecipe_
+              </a>
+
               </li>
               {/* Add or remove platforms as needed */}
             </ul>
