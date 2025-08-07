@@ -188,7 +188,7 @@ export default function HomePage() {
   <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
     {/* Floating Card */}
     <div className="md:col-span-7">
-      <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 relative z-10">
+      <div className="bg-white rounded-3xl shadow-sm p-6 md:p-8 relative z-10">
         {recipe.image && (
           <img
             src={recipe.image}
