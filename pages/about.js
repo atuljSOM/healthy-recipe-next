@@ -1,27 +1,68 @@
 // pages/about.js
-import Head from 'next/head';
 
-export default function About() {
+import Head from "next/head";
+
+export default function AboutPage() {
   return (
     <>
       <Head>
         <title>About Us | Daily Healthy Recipe</title>
-        <meta name="description" content="Learn about the mission of DailyHealthyRecipe.com – delivering one high-protein, low-calorie recipe each day." />
+        <meta
+          name="description"
+          content="Learn more about the mission behind Daily Healthy Recipe and the team that makes it happen."
+        />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen px-6 py-10 bg-lime-50 text-gray-800">
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded shadow">
-          <h1 className="text-3xl font-bold mb-4 text-green-700">About Us</h1>
-          <p className="mb-4">
-            Welcome to <strong>DailyHealthyRecipe.com</strong> – your trusted source for a <strong>new high-protein, low-calorie recipe every single day</strong>.
-          </p>
-          <p className="mb-4">
-            We believe healthy eating shouldn’t feel like a chore. That’s why we’ve built this platform to <strong>deliver one carefully curated recipe each day</strong> — a flavorful, nutritious meal that’s easy to follow and keeps your health goals on track.
-          </p>
-          <p className="mb-4">
-            But we’re not just about recipes. We’re about <strong>building a daily ritual</strong>, one that creates <strong>anticipation and excitement</strong>. Every time you visit, you’ll discover something fresh — and you'll know that tomorrow holds something new to look forward to.
-          </p>
+
+      <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <h1 className="text-3xl font-bold text-purple-700">About Daily Healthy Recipe</h1>
+
           <p>
-            Whether you're into chicken, tofu, fish, or plant-based proteins, we’ve got something for everyone — always focused on <strong>low-calorie and high-protein balance</strong> to fuel your body right.
+            <strong>Daily Healthy Recipe</strong> was created with one simple mission: to make healthy eating easier, more exciting, and more accessible to everyone — one day at a time.
+          </p>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">Why We Exist</h2>
+            <p>
+              We know that food is a big part of your life — and when it's healthy, it should also be delicious, simple, and inspiring.
+              Whether you're a busy professional, a parent, or someone just trying to eat better, we’re here to help you build that habit one bite at a time.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">What We Do</h2>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Deliver a brand-new, healthy recipe every single day</li>
+              <li>Let you filter by protein preferences (like tofu, fish, chicken, and more)</li>
+              <li>Make it easy to build variety into your diet — effortlessly</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">Our Philosophy</h2>
+            <p>
+              We believe in:
+            </p>
+            <ul className="list-disc list-inside space-y-1 mt-2">
+              <li><strong>Consistency over perfection.</strong> One healthy meal a day is a great start.</li>
+              <li><strong>Simple wins.</strong> You don't need complicated ingredients or expensive tools to eat well.</li>
+              <li><strong>Joy in food.</strong> Healthy shouldn't be boring.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">Made with 💜</h2>
+            <p>
+              Daily Healthy Recipe is a small passion project, built for everyday people who want to make small, sustainable changes — without the pressure of diets or trends.
+            </p>
+          </section>
+
+          <p className="text-sm text-gray-500">
+            Have questions? Email us at:{" "}
+            <a href="mailto:hello@dailyhealthyrecipe.com" className="text-blue-600 underline">
+              hello@dailyhealthyrecipe.com
+            </a>
           </p>
         </div>
       </main>
