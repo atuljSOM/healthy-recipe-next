@@ -1,6 +1,8 @@
 // pages/about.js
 
 import Head from "next/head";
+import Link from "next/link";
+
 
 export default function AboutPage() {
   return (
@@ -17,6 +19,17 @@ export default function AboutPage() {
         <link rel="manifest" href="/manifest.json" />
 
       </Head>
+
+          <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
+          <div className="mb-8">
+            <Link
+              href="/"
+              className="inline-block text-purple-700 font-semibold border border-purple-300 rounded px-4 py-2 hover:bg-purple-50 transition"
+            >
+              ← Home
+            </Link>
+          </div>
+
 
       <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
         <div className="max-w-3xl mx-auto space-y-8">
