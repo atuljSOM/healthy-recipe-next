@@ -121,11 +121,12 @@ export default function HomePage() {
           {/* Recipe Section */}
           {recipe && recipe.title !== "Recipe Error" ? (
 
-           <section className="bg-[#f9f9f9] rounded-3xl px-4 py-10 md:px-8">
+           <section className="bg-[#f9f9f9] rounded-3xl py-10 px-4 md:px-12 w-full">
   <h2 className="text-2xl font-bold text-center mb-10">Today’s Recipe</h2>
 
   <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-    {/* Floating Card: Image, Title, Nutrients */}
+     {/* Floating card - md:col-span-7 */}
+    {/* Ingredients/steps - md:col-span-5 */}
     <div className="md:col-span-7">
       <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 relative z-10">
         {recipe.image && (
