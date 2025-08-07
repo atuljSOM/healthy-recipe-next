@@ -21,6 +21,15 @@ export default function AboutPage() {
       </Head>
 
       <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
+            <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
+        <div className="mb-8">
+          <Link
+            href="/"
+            className="inline-block text-purple-700 font-semibold border border-purple-300 rounded px-4 py-2 hover:bg-purple-50 transition"
+          >
+            ← Home
+          </Link>
+        </div>
         <div className="max-w-3xl mx-auto space-y-8">
           <h1 className="text-3xl font-bold text-purple-700">About Daily Healthy Recipe</h1>
 
