@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-semibold mb-2">6. Contact Us</h2>
             <p>
-              If you have any questions about this policy, email us at: <a href="mailto:hello@dailyhealthyrecipe.com" className="text-blue-600 underline">hello@dailyhealthyrecipe.com</a>
+              If you have any questions about this policy, email us at: <a href="mailto:contact@dailyhealthyrecipe.com" className="text-blue-600 underline">contact@dailyhealthyrecipe.com</a>
             </p>
           </section>
 
