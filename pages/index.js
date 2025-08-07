@@ -182,7 +182,7 @@ export default function HomePage() {
           {/* Hero Header */}
           <section className="text-center space-y-3">
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-              Discover a New Recipe Every Day
+              Discover a new recipe every day
             </h1>
             <p className="text-gray-600 text-lg">
               Tired of eating the same thing? Explore new flavors and healthy recipes, one day at a time.
@@ -216,7 +216,7 @@ export default function HomePage() {
           {recipe && recipe.title !== "Recipe Error" ? (
 
            <section className="w-full bg-[#f9f9f9] py-10 px-4 md:px-12">
-  <h2 className="text-2xl font-bold text-center mb-10">Today's Healthy Recipe,Fresh and Unexpected</h2>
+  <h2 className="text-2xl font-bold text-center mb-10">Today's Recipe,Fresh and Unexpected</h2>
 
   <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
     {/* Floating Card */}
