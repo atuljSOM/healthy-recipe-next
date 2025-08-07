@@ -16,6 +16,45 @@ export default function HomePage() {
       .catch(err => console.error("Error fetching recipe", err));
   }, [proteinChoice]);
 
+  useEffect(() => {
+  let scriptEl = null;
+
+  const loadScript = () => {
+    const container = document.getElementById("eo_form_container");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src = "https://eocampaign1.com/form/df92807e-70ef-11f0-8bd4-b7e922d54320.js";
+    script.async = true;
+    script.setAttribute("data-form", "df92807e-70ef-11f0-8bd4-b7e922d54320");
+    container.appendChild(script);
+
+    scriptEl = script;
+  };
+
+  loadScript();
+
+  let resizeTimeout;
+  const handleResize = () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      loadScript();
+    }, 300);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+    if (scriptEl?.remove) {
+      scriptEl.remove();
+    }
+  };
+}, []);
+
+
   // Countdown to midnight PST
   useEffect(() => {
     const updateCountdown = () => {
@@ -81,59 +120,75 @@ export default function HomePage() {
 
           {/* Recipe Section */}
           {recipe && recipe.title !== "Recipe Error" ? (
-            <section className="bg-white rounded-3xl p-8 shadow-xl">
-              <h2 className="text-2xl font-bold mb-4 text-center">Today’s Recipe</h2>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                <div>
-                  {recipe.image && (
-                    <img src={recipe.image} alt={recipe.title} className="rounded-xl w-full object-cover shadow" />
-                  )}
-                  <div className="mt-4">
-                    <h3 className="text-lg font-semibold">{recipe.title}</h3>
-                    <p className="text-sm text-gray-600">{recipe.calories} kcal</p>
-                    {recipe.nutrients?.length > 0 && (
-                      <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
-                        {recipe.nutrients.map((n, i) => <li key={i}>{n}</li>)}
-                      </ul>
-                    )}
+           <section className="bg-emerald-100 bg-opacity-40 rounded-3xl px-4 py-6 md:px-8 shadow-inner">
+              <h2 className="text-2xl font-bold text-center mb-6">Today’s Recipe</h2>
+            
+              <div className="relative">
+                {/* Floating Card */}
+                <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 max-w-5xl mx-auto">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {/* Image + Title + Nutrition */}
+                    <div>
+                      {recipe.image && (
+                        <img
+                          src={recipe.image}
+                          alt={recipe.title}
+                          className="rounded-xl w-full h-auto object-cover max-h-[360px] shadow"
+                        />
+                      )}
+                      <h3 className="text-xl font-semibold mt-4">{recipe.title}</h3>
+                      <p className="text-sm text-gray-600">{recipe.calories} kcal</p>
+            
+                      {recipe.nutrients?.length > 0 && (
+                        <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
+                          {recipe.nutrients.map((n, i) => <li key={i}>{n}</li>)}
+                        </ul>
+                      )}
+                    </div>
+            
+                    {/* Ingredients + Steps */}
+                    <div className="md:col-span-2 space-y-6">
+                      <div>
+                        <h4 className="font-semibold text-md mb-1">Ingredients</h4>
+                        <ul className="list-disc list-inside text-gray-700 text-sm">
+                          {recipe.ingredients.map((item, i) => <li key={i}>{item}</li>)}
+                        </ul>
+                      </div>
+            
+                      <div>
+                        <h4 className="font-semibold text-md mb-1">Steps</h4>
+                        <ol className="list-decimal list-inside text-gray-700 text-sm space-y-1">
+                          {recipe.steps.map((step, i) => <li key={i}>{step}</li>)}
+                        </ol>
+                      </div>
+            
+                      {recipe.affiliateLink && (
+                        <a
+                          href={recipe.affiliateLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-emerald-600 text-sm hover:underline block mt-4"
+                        >
+                          View full recipe →
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-
-                <div className="md:col-span-2 space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-md mb-1">Ingredients</h4>
-                    <ul className="list-disc list-inside text-gray-700 text-sm">
-                      {recipe.ingredients.map((item, i) => <li key={i}>{item}</li>)}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-md mb-1">Steps</h4>
-                    <ol className="list-decimal list-inside text-gray-700 text-sm space-y-1">
-                      {recipe.steps.map((step, i) => <li key={i}>{step}</li>)}
-                    </ol>
-                  </div>
-
-                  {recipe.affiliateLink && (
-                    <a href={recipe.affiliateLink} target="_blank" rel="noopener noreferrer"
-                      className="text-emerald-600 text-sm hover:underline block mt-4">
-                      View full recipe →
-                    </a>
-                  )}
                 </div>
               </div>
             </section>
+
           ) : (
             <p className="text-center italic text-gray-500">Loading recipe...</p>
           )}
 
           {/* Subscribe */}
           <section className="bg-white bg-opacity-80 backdrop-blur rounded-xl p-6 shadow-md text-center">
-            <h3 className="text-xl font-semibold mb-2">Subscribe</h3>
-            <p className="text-sm text-gray-600 mb-4">Get a recipe in your inbox every day</p>
-            <div id="eo_form_container" className="flex justify-center"></div>
+            <h3 className="text-xl font-semibold mb-2">Subscribe to Daily Recipes</h3>
+            <p className="text-sm text-gray-600 mb-4">Delivered fresh to your inbox every morning.</p>
+            <div id="eo_form_container" className="flex justify-center w-full"></div>
           </section>
+
 
           {/* Footer */}
           <footer className="pt-10 text-center text-gray-400 text-sm border-t">
