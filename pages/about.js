@@ -21,7 +21,6 @@ export default function AboutPage() {
       </Head>
 
       <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
-            <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
         <div className="mb-8">
           <Link
             href="/"
