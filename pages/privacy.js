@@ -1,27 +1,69 @@
-// pages/about.js
-import Head from 'next/head';
+// pages/privacy.js
 
-export default function About() {
+import Head from "next/head";
+
+export default function PrivacyPolicy() {
   return (
     <>
       <Head>
-        <title>About Us | Daily Healthy Recipe</title>
-        <meta name="description" content="Learn about the mission of DailyHealthyRecipe.com – delivering one high-protein, low-calorie recipe each day." />
+        <title>Privacy Policy | Daily Healthy Recipe</title>
+        <meta name="description" content="Our privacy policy explains how we collect and protect your data when using Daily Healthy Recipe." />
       </Head>
-      <main className="min-h-screen px-6 py-10 bg-lime-50 text-gray-800">
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded shadow">
-          <h1 className="text-3xl font-bold mb-4 text-green-700">About Us</h1>
-          <p className="mb-4">
-            Welcome to <strong>DailyHealthyRecipe.com</strong> – your trusted source for a <strong>new high-protein, low-calorie recipe every single day</strong>.
-          </p>
-          <p className="mb-4">
-            We believe healthy eating shouldn’t feel like a chore. That’s why we’ve built this platform to <strong>deliver one carefully curated recipe each day</strong> — a flavorful, nutritious meal that’s easy to follow and keeps your health goals on track.
-          </p>
-          <p className="mb-4">
-            But we’re not just about recipes. We’re about <strong>building a daily ritual</strong>, one that creates <strong>anticipation and excitement</strong>. Every time you visit, you’ll discover something fresh — and you'll know that tomorrow holds something new to look forward to.
-          </p>
+
+      <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <h1 className="text-3xl font-bold text-purple-700">Privacy Policy</h1>
+
           <p>
-            Whether you're into chicken, tofu, fish, or plant-based proteins, we’ve got something for everyone — always focused on <strong>low-calorie and high-protein balance</strong> to fuel your body right.
+            At <strong>Daily Healthy Recipe</strong>, your privacy is important to us. This policy outlines how we collect, use, and protect your personal data.
+          </p>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">1. Information We Collect</h2>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Your email address when you subscribe to our daily recipe newsletter.</li>
+              <li>Anonymous usage data (e.g., pages viewed, time on site).</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">2. How We Use Your Information</h2>
+            <ul className="list-disc list-inside space-y-1">
+              <li>To send you a new healthy recipe each day via email.</li>
+              <li>To improve our website and content based on usage patterns.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">3. Third-Party Services</h2>
+            <p>
+              We use <strong>EmailOctopus</strong> to manage our mailing list and send you recipes. EmailOctopus stores your email address securely and does not sell your data.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">4. Cookies</h2>
+            <p>
+              We may use cookies to track anonymous usage statistics to improve the site. These do not store personal information.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">5. Opting Out</h2>
+            <p>
+              You can unsubscribe at any time by clicking the “Unsubscribe” link in any recipe email, or by contacting us directly.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-2">6. Contact Us</h2>
+            <p>
+              If you have any questions about this policy, email us at: <a href="mailto:hello@dailyhealthyrecipe.com" className="text-blue-600 underline">hello@dailyhealthyrecipe.com</a>
+            </p>
+          </section>
+
+          <p className="text-sm text-gray-500">
+            Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
           </p>
         </div>
       </main>
