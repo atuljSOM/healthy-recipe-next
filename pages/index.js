@@ -215,10 +215,10 @@ export default function HealthyRecipe() {
 
           <hr className="border-gray-300" />
 
-          {/* EmailOctopus Embed Script */}
-           <section className="flex justify-center mt-10">
-              <div id="eo_form_container" className="flex justify-center w-full"></div>
-            </section>
+         {/* Desktop-only EmailOctopus Form */}
+          <section className="hidden sm:flex justify-center mt-10">
+            <div id="eo_form_container" className="flex justify-center w-full"></div>
+          </section>
 
           {/* Mobile Countdown Timer */}
           <section className="sm:hidden text-center text-sm font-semibold text-emerald-700 mt-4">
@@ -253,6 +253,11 @@ export default function HealthyRecipe() {
                     </ol>
                   </div>
                 </div>
+
+              {/* Mobile-only EmailOctopus Form */}
+              <section className="flex sm:hidden justify-center mt-10">
+                <div id="eo_form_container" className="flex justify-center w-full"></div>
+              </section>
 
                 <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 shadow-sm">
                   <p><strong>Calories:</strong> {recipe.calories ?? "N/A"} kcal</p>
