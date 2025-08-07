@@ -165,7 +165,7 @@ export default function HomePage() {
               <select
                 value={proteinChoice}
                 onChange={(e) => setProteinChoice(e.target.value)}
-                className="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
+                className="border border-purple-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-purple-500 bg-purple-50 text-gray-800 shadow-sm"
               >
                 <option value="all">All Proteins</option>
                 <option value="chicken">Chicken</option>
@@ -179,9 +179,10 @@ export default function HomePage() {
                 <option value="shrimp">Shrimp</option>
               </select>
 
-              <div className="bg-red-400 text-white rounded-lg px-4 py-2 text-sm font-semibold shadow">
+              <div className="bg-purple-600 text-white rounded-lg px-4 py-2 text-sm font-semibold shadow">
                 Next recipe in: <span className="font-mono">{timeLeft}</span>
               </div>
+
             </div>
           </section>
 
