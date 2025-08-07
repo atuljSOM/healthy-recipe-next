@@ -121,63 +121,65 @@ export default function HomePage() {
           {/* Recipe Section */}
           {recipe && recipe.title !== "Recipe Error" ? (
 
-            <section className="bg-gray-100 rounded-3xl px-4 py-8 md:px-8 shadow-inner">
-                <h2 className="text-2xl font-bold text-center mb-8">Today’s Recipe</h2>
-              
-                {/* Floating Card with Image, Title, Nutrients */}
-                <div className="relative mb-10">
-                  <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto -mt-6 z-10 relative">
-                    {recipe.image && (
-                      <img
-                        src={recipe.image}
-                        alt={recipe.title}
-                        className="rounded-lg w-full h-auto object-cover max-h-[340px] shadow-md mb-4"
-                      />
-                    )}
-              
-                    <h3 className="text-xl font-bold mb-2 text-gray-800">{recipe.title}</h3>
-              
-                    <p className="text-sm text-gray-600 mb-2">{recipe.calories} kcal</p>
-              
-                    {recipe.nutrients?.length > 0 && (
-                      <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        {recipe.nutrients.map((n, i) => <li key={i}>{n}</li>)}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              
-                {/* Main Body: Ingredients and Steps */}
-                <div className="max-w-5xl mx-auto space-y-10">
-                  {/* Ingredients */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2 text-gray-800">Ingredients</h4>
-                    <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
-                      {recipe.ingredients.map((item, i) => <li key={i}>{item}</li>)}
-                    </ul>
-                  </div>
-              
-                  {/* Steps */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2 text-gray-800">Steps</h4>
-                    <ol className="list-decimal list-inside text-gray-700 text-sm space-y-2">
-                      {recipe.steps.map((step, i) => <li key={i}>{step}</li>)}
-                    </ol>
-                  </div>
-              
-                  {/* Source Link */}
-                  {recipe.affiliateLink && (
-                    <a
-                      href={recipe.affiliateLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 text-sm hover:underline block"
-                    >
-                      View full recipe →
-                    </a>
-                  )}
-                </div>
-              </section>
+            <section className="bg-[#f9f9f9] rounded-3xl px-4 py-10 md:px-8">
+  <h2 className="text-2xl font-bold text-center mb-10">Today’s Recipe</h2>
+
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+    {/* Floating Card - Image, Title, Nutrients */}
+    <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 relative z-10">
+      {recipe.image && (
+        <img
+          src={recipe.image}
+          alt={recipe.title}
+          className="rounded-lg w-full h-auto object-cover max-h-[320px] shadow-md mb-4"
+        />
+      )}
+
+      <h3 className="text-xl font-bold mb-2 text-gray-800">{recipe.title}</h3>
+      <p className="text-sm text-gray-600 mb-2">{recipe.calories} kcal</p>
+
+      {recipe.nutrients?.length > 0 && (
+        <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+          {recipe.nutrients.map((n, i) => <li key={i}>{n}</li>)}
+        </ul>
+      )}
+    </div>
+
+    {/* Ingredients + Steps */}
+    <div className="md:col-span-2">
+      <div className="bg-[#fcfcfc] rounded-2xl shadow-sm p-6 md:p-8 space-y-8">
+        {/* Ingredients */}
+        <div>
+          <h4 className="text-lg font-semibold mb-2 text-gray-800">Ingredients</h4>
+          <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
+            {recipe.ingredients.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+
+        {/* Steps */}
+        <div>
+          <h4 className="text-lg font-semibold mb-2 text-gray-800">Steps</h4>
+          <ol className="list-decimal list-inside text-gray-700 text-sm space-y-2">
+            {recipe.steps.map((step, i) => <li key={i}>{step}</li>)}
+          </ol>
+        </div>
+
+        {/* Source Link */}
+        {recipe.affiliateLink && (
+          <a
+            href={recipe.affiliateLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 text-sm hover:underline block"
+          >
+            View full recipe →
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
           ) : (
