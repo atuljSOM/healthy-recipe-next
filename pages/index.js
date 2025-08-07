@@ -13,12 +13,43 @@ export default function HealthyRecipe() {
   }, [proteinChoice]);
 
   useEffect(() => {
+  let scriptEl = null;
+
+  const loadScript = () => {
+    const container = document.getElementById("eo_form_container");
+    if (!container) return;
+
+    container.innerHTML = "";
+
     const script = document.createElement("script");
     script.src = "https://eocampaign1.com/form/df92807e-70ef-11f0-8bd4-b7e922d54320.js";
     script.async = true;
     script.setAttribute("data-form", "df92807e-70ef-11f0-8bd4-b7e922d54320");
-    document.getElementById("eo_form_container")?.appendChild(script);
-  }, []);
+    container.appendChild(script);
+
+    scriptEl = script;
+  };
+
+  loadScript();
+
+  let resizeTimeout;
+  const handleResize = () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      loadScript();
+    }, 300);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+    if (scriptEl?.remove) {
+      scriptEl.remove();
+    }
+  };
+}, []);
+
 
    const [timeLeft, setTimeLeft] = useState("");
 
@@ -215,10 +246,6 @@ export default function HealthyRecipe() {
 
           <hr className="border-gray-300" />
 
-         {/* Desktop-only EmailOctopus Form */}
-          <section className="hidden sm:flex justify-center mt-10">
-            <div id="eo_form_container" className="flex justify-center w-full"></div>
-          </section>
 
           {/* Mobile Countdown Timer */}
           <section className="sm:hidden text-center text-sm font-semibold text-emerald-700 mt-4">
@@ -254,10 +281,6 @@ export default function HealthyRecipe() {
                   </div>
                 </div>
 
-              {/* Mobile-only EmailOctopus Form */}
-              <section className="flex sm:hidden justify-center mt-10">
-                <div id="eo_form_container" className="flex justify-center w-full"></div>
-              </section>
 
                 <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 shadow-sm">
                   <p><strong>Calories:</strong> {recipe.calories ?? "N/A"} kcal</p>
@@ -283,6 +306,12 @@ export default function HealthyRecipe() {
           ) : (
             <p className="text-center text-gray-500 italic">Loading your recipe...</p>
           )}
+
+            {/* Responsive EmailOctopus Form */}
+            <section className="flex justify-center mt-10">
+              <div id="eo_form_container" className="flex justify-center w-full"></div>
+            </section>
+
 
           <footer className="pt-10 border-t mt-10 text-sm text-gray-500 text-center">
             <p>© {new Date().getFullYear()} DailyHealthyRecipe</p>
