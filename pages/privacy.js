@@ -10,11 +10,9 @@ export default function PrivacyPolicy() {
         <title>Privacy Policy | Daily Healthy Recipe</title>
         <meta name="description" content="Our privacy policy explains how we collect and protect your data when using Daily Healthy Recipe." />
         <link rel="shortcut icon" href="/favicon.ico" />
-            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/manifest.json" />
-
-
       </Head>
 
       <main className="min-h-screen bg-white text-gray-800 px-6 py-12">
@@ -26,7 +24,7 @@ export default function PrivacyPolicy() {
             ← Home
           </Link>
         </div>
-              
+
         <div className="max-w-3xl mx-auto space-y-8">
           <h1 className="text-3xl font-bold text-purple-700">Privacy Policy</h1>
 
@@ -74,7 +72,10 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-semibold mb-2">6. Contact Us</h2>
             <p>
-              If you have any questions about this policy, email us at: <a href="mailto:contact@dailyhealthyrecipe.com" className="text-blue-600 underline">contact@dailyhealthyrecipe.com</a>
+              If you have any questions about this policy, email us at:{" "}
+              <a href="mailto:contact@dailyhealthyrecipe.com" className="text-blue-600 underline">
+                contact@dailyhealthyrecipe.com
+              </a>
             </p>
           </section>
 
