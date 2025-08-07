@@ -134,7 +134,7 @@ export default function HomePage() {
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
 
-         <header className="flex items-center justify-between py-4 border-b border-gray-200">
+         <header className="flex items-center justify-between py-4 border-b border-gray-200 px-0">
           <div className="flex items-center">
             <img
               src="/logo.png"
