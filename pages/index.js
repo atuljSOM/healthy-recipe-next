@@ -135,8 +135,8 @@ export default function HomePage() {
 
 
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
-
-               <header className="w-screen px-4 flex items-center justify-between py-4 border-b border-gray-200 relative z-20 bg-white bg-opacity-70 backdrop-blur">
+        <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
+          <header className="w-screen px-4 flex items-center justify-between py-4 border-b border-gray-200 relative z-20">
         {/* Left: Logo and Title */}
         <div className="flex items-center gap-2">
           <img
@@ -163,7 +163,7 @@ export default function HomePage() {
       
           {/* Dropdown Menu */}
           {menuOpen && (
-            <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md py-2 border border-gray-100">
+            <div className="absolute right-0 mt-2 w-40 bg-purple-50 shadow-lg rounded-md py-2 border border-gray-100">
               <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
                 About
               </Link>
@@ -174,9 +174,6 @@ export default function HomePage() {
           )}
         </div>
       </header>
-
-                
-        <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
 
 
           {/* Hero Header */}
