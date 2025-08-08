@@ -136,46 +136,48 @@ export default function HomePage() {
 
       <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-purple-100 to-rose-50 text-gray-900 font-sans py-10">
 
-          <header className="w-screen px-4 flex items-center justify-between py-4 border-b border-gray-200 relative z-20">
-        {/* Left: Logo and Title */}
-        <div className="flex items-center gap-2">
-          <img
-            src="/logo.png"
-            alt="Daily Healthy Recipe logo"
-            className="w-14 h-14 object-contain"
-          />
-          <div className="leading-snug text-left">
-            <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
-              Dailyhealthyrecipe.com
-            </div>
-          </div>
+        <header className="w-full border-b border-gray-200 py-4 relative z-20">
+  <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex items-center justify-between">
+    {/* Left: Logo and Title */}
+    <div className="flex items-center gap-2">
+      <img
+        src="/logo.png"
+        alt="Daily Healthy Recipe logo"
+        className="w-14 h-14 object-contain"
+      />
+      <div className="leading-snug text-left">
+        <div className="text-xl sm:text-2xl font-extrabold text-purple-700 drop-shadow-md tracking-tight">
+          Dailyhealthyrecipe.com
         </div>
-      
-        {/* Right: Menu Icon */}
-        <div className="relative">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded hover:bg-purple-100 transition"
-            aria-label="Menu"
-          >
-            <Menu className="w-6 h-6 text-purple-700" />
-          </button>
-      
-          {/* Dropdown Menu */}
-          {menuOpen && (
-            <div className="absolute right-0 mt-2 w-40 bg-purple-50 shadow-lg rounded-md py-2 border border-gray-100">
-              <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
-                About
-              </Link>
-              <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">
-                Contact
-              </Link>
-            </div>
-          )}
-        </div>
-      </header>
+      </div>
+    </div>
 
-        
+    {/* Right: Menu Icon */}
+    <div className="relative">
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="p-2 rounded hover:bg-purple-100 transition"
+        aria-label="Menu"
+      >
+        <Menu className="w-6 h-6 text-purple-700" />
+      </button>
+
+      {/* Dropdown Menu */}
+      {menuOpen && (
+        <div className="absolute right-0 mt-2 w-40 bg-purple-50 shadow-lg rounded-md py-2 border border-gray-100">
+          <Link href="/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-100">
+            About
+          </Link>
+          <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-100">
+            Contact
+          </Link>
+        </div>
+      )}
+    </div>
+  </div>
+</header>
+
+  
         <div className="max-w-screen-xl mx-auto px-4 md:px-8 space-y-12">
           
 
